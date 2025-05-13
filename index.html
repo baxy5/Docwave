@@ -4,26 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <main>
-      <section>
-        <h1>{{ title }}</h1>
+    <main class="h-screen w-full px-4 bg-[#101010]">
+      <section class="w-full flex justify-center pt-10">
+        <h1 class="flex text-[64px] font-normal">
+          <span class="text-[#009365]">{{ titleDoc }}</span>
+          <span class="text-[#FFB936]">{{ titleWave }}</span>
+        </h1>
       </section>
 
-      <section>
-        <h2>{{ inputTitle }}</h2>
-        <div>
-          <input type="text" placeholder="{{ inputPlaceholder }}" />
-          <button>Upload</button>
+      <section class="pt-14 flex justify-center">
+        <div class="w-[590px]">
+          <h2 class="text-[#FFB936] text-xs font-normal uppercase">
+            {{ inputTitle }}
+          </h2>
+          <div class="flex items-center gap-1 pt-2">
+            <input
+              class="w-full p-2.5 text-[#FFB936] placeholder:uppercase border-2 border-[#009365] bg-[#FFB936]/40 outline-0"
+              type="text"
+              placeholder="{{ inputPlaceholder }}"
+            />
+            <button
+              class="p-2.5 border-2 border-[#009365] bg-[#FFB936]/40 cursor-pointer hover:bg-[#FFB936]"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 15H14V9H16.5L12 4.5M12 15H10V9H7.5L12 4.5" />
+                <path
+                  d="M12 15H14V9H16.5L12 4.5L7.5 9H10V15H12Z"
+                  stroke="#000000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6 19H18"
+                  stroke="#000000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
-      <section>
-        <div>
-          <h2>{{ outputTitle }}</h2>
-          <div></div>
+      <section class="pt-6 flex justify-center">
+        <div class="max-w-[590px] border-2 border-[#009365] px-7 py-5">
+          <h2 class="mb-2 text-[#FFB936] text-xs font-normal uppercase">
+            {{ outputTitle }}
+          </h2>
+          <div
+            class="custom-scroll w-full h-[450px] overflow-y-scroll p-4 text-white text-xs font-normal border-2 border-[#009365]"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ullam
+            reiciendis laboriosam quis molestiae velit placeat aperiam iusto,
+            nulla ex, voluptatibus totam exercitationem soluta, amet fuga eius
+            esse vitae itaque. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Eaque ullam reiciendis laboriosam quis molestiae
+            velit placeat aperiam iusto, nulla ex, voluptatibus totam
+            exercitationem soluta, amet fuga eius esse vitae itaque. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Eaque ullam reiciendis
+            laboriosam quis molestiae velit placeat aperiam iusto, nulla ex,
+            voluptatibus totam exercitationem soluta, amet fuga eius esse vitae
+            itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eaque ullam reiciendis laboriosam quis molestiae velit placeat
+            aperiam iusto, nulla ex, voluptatibus totam exercitationem soluta,
+            amet fuga eius esse vitae itaque. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Eaque ullam reiciendis laboriosam quis
+            molestiae velit placeat aperiam iusto, nulla ex, voluptatibus totam
+            exercitationem soluta, amet fuga eius esse vitae itaque. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Eaque ullam reiciendis
+            laboriosam quis molestiae velit placeat aperiam iusto, nulla ex,
+            voluptatibus totam exercitationem soluta, amet fuga eius esse vitae
+            itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eaque ullam reiciendis laboriosam quis molestiae velit placeat
+            aperiam iusto, nulla ex, voluptatibus totam exercitationem soluta,
+            amet fuga eius esse vitae itaque. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Eaque ullam reiciendis laboriosam quis
+            molestiae velit placeat aperiam iusto, nulla ex, voluptatibus totam
+            exercitationem soluta, amet fuga eius esse vitae itaque. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Eaque ullam reiciendis
+            laboriosam quis molestiae velit placeat aperiam iusto, nulla ex,
+            voluptatibus totam exercitationem soluta, amet fuga eius esse vitae
+            itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eaque ullam reiciendis laboriosam quis molestiae velit placeat
+            exercitationem soluta, amet fuga eius esse vitae itaque. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Eaque ullam reiciendis
+            laboriosam quis molestiae velit placeat aperiam iusto, nulla ex,
+            voluptatibus totam exercitationem soluta, amet fuga eius esse vitae
+            itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eaque ullam reiciendis laboriosam quis molestiae velit placeat
+          </div>
         </div>
       </section>
     </main>

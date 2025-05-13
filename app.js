@@ -9,7 +9,8 @@ require("dotenv").config();
 const hostname = process.env.HOSTNAME || "127.0.0.1";
 const port = 6543;
 const dynamicData = {
-  title: "DocWave",
+  titleDoc: "Doc",
+  titleWave: "Wave",
   inputTitle: "url / File selector",
   inputPlaceholder: "no url provided.",
   outputTitle: "Summary",
@@ -20,6 +21,7 @@ async function handleRequest(req, res) {
     if (req.method === "GET" && req.url === "/") {
       await serveHtml(req, res);
     } else if (req.method === "GET" && req.url === "/dist/output.css") {
+      // TODO: serve the style.css
       await serveCss(req, res);
     } else {
       await notFound(req, res);
