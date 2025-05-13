@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js && npx @tailwindcss/cli -i style.css -o dist/output.css --watch",
+    "dev": "concurrently \"nodemon app.js\" \"npx @tailwindcss/cli -i style.css -o dist/output.css --watch\"",
     "build:css": "npx @tailwindcss/cli -i style.css -o dist/output.css",
     "watch": "npx @tailwindcss/cli -i style.css -o dist/output.css --watch"
   },
@@ -15,6 +15,7 @@
     "node": "22.15.0"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "@tailwindcss/cli": "^4.1.6",
     "nodemon": "^3.1.10",
     "tailwindcss": "^4.1.6"
