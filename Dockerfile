@@ -15,6 +15,8 @@ RUN npm install --production
 
 COPY . /app
 
+RUN npm run build:css
+
 ENV HOSTNAME=0.0.0.0
 
 EXPOSE 6543

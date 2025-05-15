@@ -20,8 +20,7 @@ async function handleRequest(req, res) {
   try {
     if (req.method === "GET" && req.url === "/") {
       await serveHtml(req, res);
-    } else if (req.method === "GET" && req.url === "/dist/output.css") {
-      // TODO: serve the style.css
+    } else if (req.method === "GET" && req.url.includes(".css")) {
       await serveCss(req, res);
     } else {
       await notFound(req, res);
@@ -55,7 +54,7 @@ async function serveHtml(req, res) {
 }
 
 async function serveCss(req, res) {
-  const filePath = path.join(__dirname + "/dist/output.css");
+  const filePath = path.join(__dirname + req.url);
 
   fs.readFile(filePath, "utf-8", (err, data) => {
     if (err) {
