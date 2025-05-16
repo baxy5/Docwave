@@ -35,3 +35,22 @@ body {
     color: #101010;
   }
 }
+
+/* Markdown style */
+#markdown-content h1 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#markdown-content h2 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#markdown-content p {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
