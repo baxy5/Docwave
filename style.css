@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+body {
+  -webkit-font-smoothing: antialiased;
+  background: #101010;
+}
+
 .custom-scroll {
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: #ffb936 #101010; /* For Firefox */
@@ -16,4 +21,17 @@
 
 .custom-scroll::-webkit-scrollbar-track {
   background-color: #edf2f7; /* Light gray */
+}
+
+/* Text selection style */
+.selection-yellow {
+  ::selection {
+    background: #ffb936;
+    color: #101010;
+  }
+  /* For Mozilla Firefox */
+  ::-moz-selection {
+    background: #ffb936;
+    color: #101010;
+  }
 }
