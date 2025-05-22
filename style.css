@@ -49,8 +49,28 @@ body {
   font-weight: 600;
 }
 
+#markdown-content h3 {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#markdown-content h4 {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
 #markdown-content p {
   color: #ffffff;
   font-size: 16px;
   font-weight: 400;
+}
+
+#markdown-content ul {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  list-style-type: circle;
+  padding-left: 24px;
 }

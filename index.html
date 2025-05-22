@@ -8,30 +8,34 @@
     <link rel="stylesheet" href="gothic-font.css" />
     <title>Document</title>
   </head>
-  <body class="dotgothic16-regular selection-yellow">
+  <body class="selection-yellow">
     <main class="h-screen w-full px-4 bg-[#101010]">
-      <section class="w-full flex justify-center pt-10">
+      <section class="dotgothic16-regular w-full flex justify-center pt-10">
         <h1 class="flex text-[64px] font-normal">
           <span class="text-[#009365]">{{ titleDoc }}</span>
           <span class="text-[#FFB936]">{{ titleWave }}</span>
         </h1>
       </section>
 
-      <section class="pt-14 flex justify-center">
+      <section class="dotgothic16-regular pt-14 flex justify-center">
         <div class="w-[950px]">
           <h2 class="text-[#FFB936] text-sm font-normal uppercase">
             {{ inputTitle }}
           </h2>
           <div class="flex items-center gap-1 pt-2">
             <input
+              id="input-url"
               class="w-full p-2.5 text-[#FFB936] placeholder:uppercase border-2 border-[#009365] bg-[#FFB936]/40 outline-0"
               type="text"
               placeholder="{{ inputPlaceholder }}"
             />
             <button
+              id="generate"
               class="p-2.5 border-2 border-[#009365] bg-[#FFB936]/40 cursor-pointer hover:bg-[#FFB936]"
             >
-              <svg
+              Generate
+              <!-- TODO: Extend whole with document -->
+              <!-- <svg
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -52,25 +56,28 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
-              </svg>
+              </svg> -->
             </button>
           </div>
         </div>
       </section>
 
       <section class="pt-6 flex justify-center">
-        <div class="max-w-[950px] border-2 border-[#009365] px-7 py-5">
-          <h2 class="mb-2 text-[#FFB936] text-sm font-normal uppercase">
+        <div class="w-full max-w-[950px] border-2 border-[#009365] px-7 py-5">
+          <h2
+            class="dotgothic16-regular mb-2 text-[#FFB936] text-sm font-normal uppercase"
+          >
             {{ outputTitle }}
           </h2>
           <div
             id="markdown-content"
             class="custom-scroll w-full h-[650px] overflow-y-scroll p-4 border-2 border-[#009365]"
-          >
-            {{ outputContent }}
-          </div>
+          ></div>
         </div>
       </section>
     </main>
+
+    <script src="./scripts/fetchSummary.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </body>
 </html>

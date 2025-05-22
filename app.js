@@ -1,7 +1,6 @@
 const http = require("node:http");
 const fs = require("fs");
 const path = require("path");
-const { marked } = require("marked");
 
 require("dotenv").config();
 
@@ -12,11 +11,9 @@ const port = 6543;
 const dynamicData = {
   titleDoc: "Doc",
   titleWave: "Wave",
-  inputTitle: "url / File selector",
+  inputTitle: "url",
   inputPlaceholder: "no url provided.",
   outputTitle: "Summary",
-  outputContent:
-    "# Example Markdown\n\n## H2 example\n\nThis is a simple markdown file with exactly twenty words. It demonstrates how markdown formatting works here.",
 };
 
 async function handleRequest(req, res) {
@@ -47,8 +44,6 @@ async function serveHtml(req, res) {
     }
 
     let modifiedData = data;
-
-    dynamicData.outputContent = marked.parse(dynamicData.outputContent);
 
     for (const [key, value] of Object.entries(dynamicData)) {
       modifiedData = modifiedData.replace(`{{ ${key} }}`, value);
