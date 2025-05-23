@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -21,7 +21,8 @@ class UrlRequest(BaseModel):
 
 
 @app.post("/")
-async def summary(req: UrlRequest):
-    return StreamingResponse(
-        get_summary(req.url), media_type="text/event-stream"
-    )
+async def summary(req: UrlRequest) -> StreamingResponse:
+    try:
+        return StreamingResponse(get_summary(req.url), media_type="text/event-stream")
+    except:
+        raise HTTPException(status_code=500, detail="OpenAI call failed.")

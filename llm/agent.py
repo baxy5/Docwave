@@ -14,6 +14,7 @@ model = init_chat_model(model="gpt-4o-mini", model_provider="openai")
 
 
 async def get_summary(url: str):
+    # TODO: Scrape url, get site content, pass it to the LLM and then summarize
     messages = [
         SystemMessage(
             "You are a helpful assistant. You create summary about the content of the {url} provided by the user. It may not have enough context but try to summarized its content. If you're unable to create a summary, or the content of the {url} includes sexism, racism, porn, blood or killing then you must respond: I couldn't create a summary from this content. And then explain why."

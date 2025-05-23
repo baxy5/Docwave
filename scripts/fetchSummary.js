@@ -6,6 +6,8 @@ generateButton.addEventListener("click", async () => {
   const inputValue = input.value;
 
   if (inputValue) {
+    input.value = "";
+    content.innerHTML = "";
     await fetchSummaryApi(inputValue);
   } else {
     alert("The input field is empty. You have to provide an url.");
