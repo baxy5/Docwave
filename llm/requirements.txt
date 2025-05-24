@@ -9,3 +9,5 @@ pydantic
 
 dotenv
 pypdf
+
+scrapling
