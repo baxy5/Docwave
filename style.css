@@ -74,3 +74,11 @@ body {
   list-style-type: circle;
   padding-left: 24px;
 }
+
+#markdown-content ul li {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  list-style-type: circle;
+  padding-left: 24px;
+}

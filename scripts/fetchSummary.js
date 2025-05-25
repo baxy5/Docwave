@@ -25,20 +25,21 @@ async function fetchSummaryApi(input) {
 
   const reader = response.body.getReader();
   const decoder = new TextDecoder();
-  let result = "";
+  let accumulatedMarkdown = "";
 
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
 
     const chunk = decoder.decode(value, { stream: true });
+    accumulatedMarkdown += chunk;
 
-    // TODO: format the markdown
-    chunk.split("\n\n").forEach((event) => {
-      if (event.startsWith("data:")) {
-        result += event.replace(/^data:\s?/, "");
-        content.innerHTML = marked.parse(result);
-      }
-    });
+    content.innerHTML = marked.parse(accumulatedMarkdown);
+  }
+
+  const finalChunk = decoder.decode();
+  if (finalChunk) {
+    accumulatedMarkdown += finalChunk;
+    content.innerHTML = marked.parse(accumulatedMarkdown);
   }
 }

@@ -36,4 +36,4 @@ async def get_summary(url: str):
 
     async for chunk in model.astream(messages):
         if chunk.content:
-            yield f"data: {chunk.content}\n\n"
+            yield chunk.content
