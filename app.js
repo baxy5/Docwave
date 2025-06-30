@@ -8,13 +8,6 @@ require("dotenv").config();
 // it would only run in the docker container enviromnent
 const hostname = process.env.HOSTNAME || "127.0.0.1";
 const port = 6543;
-const dynamicData = {
-  titleDoc: "Doc",
-  titleWave: "Wave",
-  inputTitle: "url",
-  inputPlaceholder: "no url provided.",
-  outputTitle: "Summary",
-};
 
 async function handleRequest(req, res) {
   try {
@@ -43,16 +36,10 @@ async function serveHtml(req, res) {
       return;
     }
 
-    let modifiedData = data;
-
-    for (const [key, value] of Object.entries(dynamicData)) {
-      modifiedData = modifiedData.replace(`{{ ${key} }}`, value);
-    }
-
     res.writeHead(200, {
       "Content-Type": "text/html",
     });
-    res.end(modifiedData);
+    res.end(data);
   });
 }
 
