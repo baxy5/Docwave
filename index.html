@@ -12,22 +12,22 @@
     <main class="h-screen w-full px-4 bg-[#101010]">
       <section class="dotgothic16-regular w-full flex justify-center pt-10">
         <h1 class="flex text-[64px] font-normal">
-          <span class="text-[#009365]">{{ titleDoc }}</span>
-          <span class="text-[#FFB936]">{{ titleWave }}</span>
+          <span class="text-[#009365]">Doc</span>
+          <span class="text-[#FFB936]">Wave</span>
         </h1>
       </section>
 
       <section class="dotgothic16-regular pt-14 flex justify-center">
         <div class="w-[950px]">
           <h2 class="text-[#FFB936] text-sm font-normal uppercase">
-            {{ inputTitle }}
+            url
           </h2>
           <div class="flex items-center gap-1 pt-2">
             <input
               id="input-url"
               class="w-full p-2.5 text-[#FFB936] placeholder:uppercase border-2 border-[#009365] bg-[#FFB936]/40 outline-0"
               type="text"
-              placeholder="{{ inputPlaceholder }}"
+              placeholder="no url provided."
             />
             <button
               id="generate"
@@ -44,7 +44,7 @@
           <h2
             class="dotgothic16-regular mb-2 text-[#FFB936] text-sm font-normal uppercase"
           >
-            {{ outputTitle }}
+            Summary
           </h2>
           <div
             id="markdown-content"
